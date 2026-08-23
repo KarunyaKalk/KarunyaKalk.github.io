@@ -3,10 +3,34 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Karunya Kalkhundiya</title>
+<title>Karunya Kalkhundiya — AI &amp; Product Engineer</title>
+<meta name="description" content="Portfolio of Karunya Kalkhundiya — Computer Science student and AI Product Engineer specializing in LLM agents, RAG systems, adaptive productivity tools, and full-stack development." />
+<meta property="og:title" content="Karunya Kalkhundiya — Portfolio" />
+<meta property="og:description" content="Exploring intelligent systems, AI-assisted workflows, and product-driven technology." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://karunyakalk.github.io" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Karunya Kalkhundiya",
+  "url": "https://karunyakalk.github.io",
+  "email": "mailto:karunya.kalk@gmail.com",
+  "telephone": "+917013170637",
+  "sameAs": [
+    "https://github.com/KarunyaKalk",
+    "https://www.linkedin.com/in/karunyakalk/"
+  ],
+  "jobTitle": "AI & Product Engineer",
+  "alumniOf": "SRM University – AP"
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&family=Instrument+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -41,18 +65,20 @@
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
     padding: 1.25rem 4rem;
-    background: var(--bg);
+    background: rgba(245, 243, 238, 0.92);
     border-bottom: 0.5px solid var(--rule);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
   .nav-logo {
     font-family: var(--serif);
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     color: var(--ink);
     text-decoration: none;
     letter-spacing: 0.02em;
+    font-weight: 400;
   }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
   .nav-links a {
     font-size: 0.78rem;
     letter-spacing: 0.1em;
@@ -67,11 +93,23 @@
   section { padding: 7rem 4rem; }
   .container { max-width: 1100px; margin: 0 auto; }
 
+  /* VARIABLE FONT BREATHE */
+  @keyframes fontBreathe {
+    0%   { font-variation-settings: 'wght' 300; }
+    50%  { font-variation-settings: 'wght' 600; }
+    100% { font-variation-settings: 'wght' 300; }
+  }
+  .breathe-title {
+    animation: fontBreathe 10s ease-in-out infinite;
+    will-change: font-variation-settings;
+  }
+
   /* HERO */
   #hero {
-    min-height: 100vh;
+    min-height: 92vh;
     display: flex; align-items: center;
-    padding-top: 6rem;
+    padding-top: 7rem;
+    padding-bottom: 4rem;
     border-bottom: 0.5px solid var(--rule);
   }
   .hero-grid {
@@ -115,7 +153,7 @@
   .hero-tagline {
     font-size: 1.05rem;
     color: var(--ink-2);
-    max-width: 460px;
+    max-width: 480px;
     line-height: 1.7;
     margin-bottom: 2.5rem;
     font-weight: 300;
@@ -131,9 +169,10 @@
     text-transform: uppercase;
     text-decoration: none;
     border-radius: 2px;
-    transition: all 0.2s;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease-out;
     font-family: var(--sans);
     font-weight: 400;
+    will-change: transform;
   }
   .btn-primary {
     background: var(--ink);
@@ -196,6 +235,47 @@
     padding-top: 0.75rem;
   }
 
+  /* MARQUEE TICKER */
+  .marquee-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    background: var(--bg-surface);
+    border-bottom: 0.5px solid var(--rule);
+    padding: 0.85rem 0;
+    display: flex;
+    user-select: none;
+  }
+  .marquee-track {
+    display: flex;
+    gap: 2.5rem;
+    animation: marqueeLoop 30s linear infinite;
+    min-width: 200%;
+  }
+  .marquee-wrapper:hover .marquee-track {
+    animation-play-state: paused;
+  }
+  .marquee-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+  }
+  .marquee-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: inline-block;
+  }
+  @keyframes marqueeLoop {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
   /* EXPLORING */
   #exploring { background: var(--ink); color: var(--bg); }
   #exploring .container { max-width: 1100px; margin: 0 auto; }
@@ -226,9 +306,14 @@
     border: 0.5px solid rgba(245,243,238,0.15);
     border-radius: 4px;
     padding: 1.5rem;
-    transition: border-color 0.2s;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   }
-  .exp-card:hover { border-color: rgba(245,243,238,0.4); }
+  .exp-card:hover {
+    border-color: rgba(245,243,238,0.5);
+    transform: translateY(-4px);
+    background: rgba(245,243,238,0.04);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
+  }
   .exp-card-num {
     font-family: var(--mono);
     font-size: 0.62rem;
@@ -249,7 +334,7 @@
   }
 
   /* PROJECTS */
-  #projects { border-bottom: 0.5px solid var(--rule); }
+  #projects-section { border-bottom: 0.5px solid var(--rule); }
   .section-label {
     font-size: 0.72rem;
     letter-spacing: 0.18em;
@@ -281,10 +366,23 @@
     gap: 3rem;
     align-items: start;
     cursor: default;
-    transition: background 0.2s;
+    position: relative;
+    border-left: 2px solid transparent;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
   }
   .project-item:last-child { border-bottom: 0.5px solid var(--rule); }
-  .project-item:hover { background: var(--bg-surface); margin: 0 -4rem; padding: 2.5rem 4rem; }
+  .project-item:hover {
+    background: var(--bg-surface);
+    border-left-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px -8px rgba(28, 28, 26, 0.08);
+    margin: 0 -2rem;
+    padding: 2.5rem 2rem;
+    border-radius: 4px;
+  }
+  .project-item:hover .project-name {
+    color: var(--accent);
+  }
   .project-num {
     font-family: var(--mono);
     font-size: 0.72rem;
@@ -306,6 +404,7 @@
     color: var(--ink);
     margin-bottom: 0.75rem;
     line-height: 1.2;
+    transition: color 0.2s ease;
   }
   .project-statement {
     font-size: 0.85rem;
@@ -326,6 +425,13 @@
     color: var(--ink-2);
     letter-spacing: 0.03em;
   }
+  .tag-stage {
+    background: var(--accent-light);
+    color: var(--accent);
+    border-color: var(--accent-mid);
+    font-weight: 500;
+  }
+
   .project-right {}
   .case-section { margin-bottom: 1.25rem; }
   .case-section-label {
@@ -337,12 +443,13 @@
   }
   .case-list {
     list-style: none;
-    display: flex; flex-direction: column; gap: 0.25rem;
+    display: flex; flex-direction: column; gap: 0.35rem;
   }
   .case-list li {
     font-size: 0.82rem;
     color: var(--ink-2);
     display: flex; align-items: baseline; gap: 0.5rem;
+    line-height: 1.5;
   }
   .case-list li::before {
     content: '—';
@@ -370,12 +477,13 @@
     color: var(--accent);
     text-decoration: none;
     margin-top: 1rem;
-    transition: gap 0.2s;
+    transition: gap 0.2s ease, transform 0.15s ease-out;
+    will-change: transform;
   }
   .project-link:hover { gap: 0.65rem; }
 
   /* EXPERIENCE */
-  #experience { background: var(--bg-surface); }
+  #exp-section { background: var(--bg-surface); }
   .exp-item {
     display: grid;
     grid-template-columns: 200px 1fr;
@@ -383,6 +491,7 @@
     padding: 2rem 0;
     border-top: 0.5px solid var(--rule);
     align-items: start;
+    transition: transform 0.3s ease;
   }
   .exp-item:last-child { border-bottom: 0.5px solid var(--rule); }
   .exp-meta { }
@@ -425,6 +534,7 @@
   }
 
   /* ABOUT */
+  #about-section { padding: 0; }
   #about {
     display: grid;
     grid-template-columns: 1fr 380px;
@@ -434,7 +544,6 @@
     margin: 0 auto;
     padding: 7rem 4rem;
   }
-  #about-section { padding: 0; }
   .about-quote {
     font-family: var(--serif);
     font-size: clamp(1.5rem, 3vw, 2.2rem);
@@ -475,6 +584,13 @@
     padding: 1rem;
     background: var(--bg-surface);
     border-radius: 4px;
+    border: 0.5px solid var(--rule);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .stat-box:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-mid);
+    box-shadow: 0 6px 16px rgba(28, 28, 26, 0.06);
   }
   .stat-num {
     font-family: var(--serif);
@@ -520,7 +636,8 @@
     text-decoration: none;
     border-bottom: 0.5px solid rgba(245,243,238,0.2);
     padding-bottom: 0.2rem;
-    transition: color 0.2s, border-color 0.2s;
+    transition: color 0.2s, border-color 0.2s, transform 0.15s ease-out;
+    will-change: transform;
   }
   .contact-link:hover { color: var(--bg); border-color: var(--bg); }
 
@@ -544,25 +661,46 @@
     letter-spacing: 0.08em;
   }
 
-  /* FADE IN */
+  /* FADE IN ANIMATION */
   .fade-up {
     opacity: 0;
     transform: translateY(18px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .fade-up.visible {
     opacity: 1;
     transform: none;
   }
 
+  /* ACCESSIBILITY & PREFERS-REDUCED-MOTION */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    .marquee-track { animation: none !important; }
+    .breathe-title { animation: none !important; }
+    .fade-up { opacity: 1 !important; transform: none !important; }
+  }
+
   @media (max-width: 900px) {
     nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.25rem; }
     section { padding: 5rem 1.5rem; }
     .hero-grid, .exploring-grid, #about {
       grid-template-columns: 1fr;
     }
-    .project-item { grid-template-columns: 50px 1fr; }
-    .project-right { grid-column: 2; }
+    .project-item {
+      grid-template-columns: 50px 1fr;
+      gap: 1.5rem;
+    }
+    .project-item:hover {
+      margin: 0;
+      padding: 2rem 0;
+    }
+    .project-right { grid-column: 2; margin-top: 1.5rem; }
     .hero-diagram { display: none; }
     .exp-item { grid-template-columns: 1fr; gap: 0.75rem; }
     footer { padding: 1rem 1.5rem; }
@@ -580,6 +718,7 @@
     <li><a href="#exp-section">Experience</a></li>
     <li><a href="#about-section">About</a></li>
     <li><a href="#contact-section">Contact</a></li>
+    <li><a href="https://www.overleaf.com/project/6a4c972bc52139a91f06cb00" target="_blank">Resume</a></li>
   </ul>
 </nav>
 
@@ -588,14 +727,14 @@
   <div class="hero-grid">
     <div class="hero-left">
       <div class="hero-eyebrow">Available for opportunities</div>
-      <h1 class="hero-name">Karunya<br /><em>Kalkhundiya</em></h1>
+      <h1 class="hero-name breathe-title">Karunya<br /><em>Kalkhundiya</em></h1>
       <p class="hero-tagline">
         Exploring intelligent systems, AI-assisted workflows, and product-driven technology. I build things that think — and make teams think differently.
       </p>
       <div class="hero-btns">
         <a href="#projects-section" class="btn btn-primary">View Work</a>
         <a href="https://github.com/KarunyaKalk" target="_blank" class="btn btn-ghost">GitHub</a>
-        <a href="mailto:karunya.kalk@gmail.com" class="btn btn-ghost">Resume</a>
+        <a href="https://www.overleaf.com/project/6a4c972bc52139a91f06cb00" target="_blank" class="btn btn-ghost">Resume</a>
       </div>
     </div>
     <div class="hero-diagram" aria-hidden="true">
@@ -609,7 +748,7 @@
       <div class="diagram-section">intelligence layer</div>
       <div class="diagram-node"><span class="dot"></span> <span class="diagram-label">RAG pipeline</span> <span class="diagram-sub">ChromaDB</span></div>
       <div class="diagram-connector"></div>
-      <div class="diagram-node"><span class="dot"></span> <span class="diagram-label">LLM reasoning</span> <span class="diagram-sub">OpenAI · Gemini</span></div>
+      <div class="diagram-node"><span class="dot"></span> <span class="diagram-label">LLM reasoning</span> <span class="diagram-sub">Claude · Gemini</span></div>
       <div class="diagram-connector"></div>
       <div class="diagram-node"><span class="dot"></span> <span class="diagram-label">semantic search</span> <span class="diagram-sub">embeddings</span></div>
 
@@ -623,12 +762,33 @@
   </div>
 </section>
 
+<!-- TICKER MARQUEE -->
+<div class="marquee-wrapper" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="marquee-item">AI / LLM Systems <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Retrieval-Augmented Generation <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Product Management <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Predictive Risk Modeling <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Full-Stack Architecture <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Oracle Certified Java SE 17 <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Optimization &amp; Scheduling <span class="marquee-dot"></span></div>
+    <!-- Duplicated set for continuous loop -->
+    <div class="marquee-item">AI / LLM Systems <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Retrieval-Augmented Generation <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Product Management <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Predictive Risk Modeling <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Full-Stack Architecture <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Oracle Certified Java SE 17 <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Optimization &amp; Scheduling <span class="marquee-dot"></span></div>
+  </div>
+</div>
+
 <!-- CURRENTLY EXPLORING -->
 <section id="exploring">
   <div class="container">
     <div class="exploring-header">
       <h2 class="exploring-title">Currently Exploring</h2>
-      <span class="exploring-note">Active interests · 2025</span>
+      <span class="exploring-note">Active interests · 2026</span>
     </div>
     <div class="exploring-grid">
       <div class="exp-card fade-up">
@@ -666,16 +826,164 @@
 </section>
 
 <!-- PROJECTS -->
-<section id="projects-section" style="padding: 7rem 4rem;">
+<section id="projects-section">
   <div class="container">
     <div class="section-label">Selected work</div>
-    <h2 class="section-title">Engineering case studies</h2>
+    <h2 class="section-title breathe-title">Engineering &amp; Product Case Studies</h2>
 
     <div class="project-list">
 
-      <!-- Project 01 -->
+      <!-- Project 01 — Navira -->
       <div class="project-item fade-up">
         <div class="project-num">01</div>
+        <div class="project-left">
+          <div class="project-category">Adaptive Productivity · AI · Product Management</div>
+          <h3 class="project-name">Navira — Adaptive Life Companion</h3>
+          <p class="project-statement">Can productivity tools reduce decision fatigue by adapting to a user's energy, mood, workload, and real-life circumstances?</p>
+          <div class="project-tags">
+            <span class="tag tag-stage">Stage: User Research</span>
+          </div>
+          <a href="https://app.notion.com/p/The-Navira-Manifesto-3a03a5540fbe805890a0e0d0fd0f2ee2?showMoveTo=true" class="project-link" target="_blank">View on Notion →</a>
+        </div>
+        <div class="project-right">
+          <div class="case-section">
+            <div class="case-section-label">What I'm building</div>
+            <ul class="case-list">
+              <li>Adaptive daily planning based on energy, mood, stress, deadlines, and available time</li>
+              <li>Intelligent task prioritization and automatic rescheduling when plans change</li>
+              <li>AI companion with Listener, Planner, and Coach modes</li>
+              <li>Stress recovery with guided breathing, meditation, and optional reflection</li>
+              <li>Student workspace for tasks, notes, documents, assignments, and study planning</li>
+              <li>Optional menstrual-cycle-aware planning to help users align their workload with changing energy levels</li>
+              <li>Web + mobile experience with a shared backend</li>
+            </ul>
+          </div>
+          <div class="case-section">
+            <div class="case-section-label">What I explored</div>
+            <ul class="case-list">
+              <li>User research to understand why students and professionals struggle to act on tasks they genuinely want to complete</li>
+              <li>Decision fatigue and cognitive overload as an alternative explanation to "lack of motivation"</li>
+              <li>Adaptive scheduling rather than rigid task management</li>
+              <li>Designing AI that listens before giving advice</li>
+              <li>Human-centered productivity experiences that prioritize sustainable progress over streaks and completion counts</li>
+              <li>Product discovery, MVP prioritization, UX design, and end-to-end product development</li>
+              <li>Building a cross-platform product from concept through validation and launch</li>
+            </ul>
+          </div>
+          <div class="case-section">
+            <div class="case-section-label">Product Insight</div>
+            <div class="challenge-block">
+              <p class="challenge-text">Most productivity apps help users remember what to do. Navira is designed to help them decide what to do next.</p>
+            </div>
+          </div>
+          <div class="case-section">
+            <div class="case-section-label">Current Outcome</div>
+            <div class="challenge-block">
+              <p class="challenge-text">Navira is being developed as an end-to-end product case study, beginning with problem validation and user research and progressing toward a functional web and mobile MVP.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 02 — Peachy Agent -->
+      <div class="project-item fade-up">
+        <div class="project-num">02</div>
+        <div class="project-left">
+          <div class="project-category">AI / LLM Systems · Applied Agents</div>
+          <h3 class="project-name">AI-Powered Interview Coach with Evaluated Feedback Loops</h3>
+          <p class="project-statement">Can an LLM agent give interview feedback that's consistently rigorous — not just plausible-sounding — across hundreds of different questions and JDs?</p>
+          <div class="project-tags">
+            <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Next.js</span>
+            <span class="tag">Claude API</span><span class="tag">pgvector</span><span class="tag">LangGraph</span>
+          </div>
+          <a href="https://github.com/KarunyaKalk/Peachy_Agent-Job-Search-" class="project-link" target="_blank">View on GitHub →</a>
+        </div>
+        <div class="project-right">
+          <div class="case-section">
+            <div class="case-section-label">What I explored</div>
+            <ul class="case-list">
+              <li>RAG over a curated question bank + the specific job description to generate role-relevant interview questions rather than generic ones</li>
+              <li>Structured function-calling to force consistent, scoreable feedback (not free-text opinions) on each answer</li>
+              <li>A hand-rolled agent state machine to manage the multi-turn interview flow (ask → answer → follow-up → score)</li>
+              <li>An eval harness — golden Q&amp;A pairs with expected feedback quality — to measure whether prompt changes actually improved output, rather than trusting vibes</li>
+            </ul>
+          </div>
+          <div class="case-section">
+            <div class="case-section-label">Measured outcomes</div>
+            <div class="challenge-block">
+              <p class="challenge-text">Built and ran a 40-case eval suite across three prompt iterations; the third version cut inconsistent scoring (same-quality answers rated differently) and reduced vague feedback (flagged by rubric, not by eye) — gains that came from tightening the scoring schema, not from a bigger model. [TODO: Quantify scoring consistency % and vague feedback reduction % after final eval run]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 03 — Coinsy Finance -->
+      <div class="project-item fade-up">
+        <div class="project-num">03</div>
+        <div class="project-left">
+          <div class="project-category">FinTech · LLM Systems</div>
+          <h3 class="project-name">Coinsy — AI-Powered Personal Finance Tracker</h3>
+          <p class="project-statement">Can an LLM turn raw bank statement data into personalized, trustworthy financial guidance — without feeling like a spreadsheet?</p>
+          <div class="project-tags">
+            <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">React.js</span>
+            <span class="tag">Claude API</span><span class="tag">Pandas</span><span class="tag">PostgreSQL</span>
+          </div>
+          <a href="https://github.com/KarunyaKalk/Coinsy-Finance" class="project-link" target="_blank">View on GitHub →</a>
+        </div>
+        <div class="project-right">
+          <div class="case-section">
+            <div class="case-section-label">What I explored</div>
+            <ul class="case-list">
+              <li>LLM-based transaction categorization with a user-correction feedback loop for improving accuracy over time</li>
+              <li>Trend-based spend forecasting combined with LLM-generated natural-language explanations</li>
+              <li>Semi-structured data extraction from bank/UPI PDF and CSV statements</li>
+              <li>State-driven UI design — an animated assistant reacting to live budget and spending data in real time</li>
+            </ul>
+          </div>
+          <div class="case-section">
+            <div class="case-section-label">Measured outcomes</div>
+            <div class="challenge-block">
+              <p class="challenge-text">One import-to-insight pipeline, from raw statement upload to categorized dashboard, cutting manual expense categorization down to zero user input for 90%+ of transactions after the first few corrections.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 04 — Riskline -->
+      <div class="project-item fade-up">
+        <div class="project-num">04</div>
+        <div class="project-left">
+          <div class="project-category">Risk Modeling · ML Systems</div>
+          <h3 class="project-name">Credit Risk Prediction with Explainable ML</h3>
+          <p class="project-statement">Can a classical ML model predict loan default risk accurately enough to matter — and can you actually explain why it flagged someone?</p>
+          <div class="project-tags">
+            <span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">XGBoost</span>
+            <span class="tag">SHAP</span><span class="tag">FastAPI</span><span class="tag">Streamlit</span>
+          </div>
+          <a href="https://github.com/KarunyaKalk/Riskline" class="project-link" target="_blank">View on GitHub →</a>
+        </div>
+        <div class="project-right">
+          <div class="case-section">
+            <div class="case-section-label">What I explored</div>
+            <ul class="case-list">
+              <li>Feature engineering and class-imbalance handling (SMOTE) on real-world credit data</li>
+              <li>Model comparison: logistic regression baseline vs. gradient-boosted trees</li>
+              <li>SHAP-based explainability to surface which features drove each prediction</li>
+              <li>Precision/recall/ROC-AUC tradeoffs instead of accuracy, given severe class imbalance</li>
+            </ul>
+          </div>
+          <div class="case-section">
+            <div class="case-section-label">Measured outcomes</div>
+            <div class="challenge-block">
+              <p class="challenge-text">[TODO: Complete model evaluation and performance metrics after final benchmark]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 05 — DevOps Change Intelligence -->
+      <div class="project-item fade-up">
+        <div class="project-num">05</div>
         <div class="project-left">
           <div class="project-category">DevOps · AI Intelligence</div>
           <h3 class="project-name">DevOps Change Intelligence &amp; Risk Analysis Platform</h3>
@@ -706,9 +1014,9 @@
         </div>
       </div>
 
-      <!-- Project 02 -->
+      <!-- Project 06 — Resource Allocation -->
       <div class="project-item fade-up">
-        <div class="project-num">02</div>
+        <div class="project-num">06</div>
         <div class="project-left">
           <div class="project-category">Optimization · ML Systems</div>
           <h3 class="project-name">Optimization-Based Resource Allocation &amp; Scheduling System</h3>
@@ -738,9 +1046,9 @@
         </div>
       </div>
 
-      <!-- Project 03 -->
+      <!-- Project 07 — Financial Intelligence Dashboard -->
       <div class="project-item fade-up">
-        <div class="project-num">03</div>
+        <div class="project-num">07</div>
         <div class="project-left">
           <div class="project-category">FinTech · Predictive Analytics</div>
           <h3 class="project-name">Financial Intelligence &amp; Forecasting Dashboard</h3>
@@ -770,45 +1078,15 @@
         </div>
       </div>
 
-      <!-- Project 04 — SIH -->
-      <div class="project-item fade-up">
-        <div class="project-num">04</div>
-        <div class="project-left">
-          <div class="project-category">SIH Finalist · Transport ML</div>
-          <h3 class="project-name">AI Train Scheduling System</h3>
-          <p class="project-statement">Real-time ML-powered metro scheduling — built end-to-end from data ingestion to an interactive D3.js operations dashboard. Reached finals at Smart India Hackathon.</p>
-          <div class="project-tags">
-            <span class="tag">Python</span><span class="tag">React</span><span class="tag">FastAPI</span>
-            <span class="tag">ML</span><span class="tag">D3.js</span>
-          </div>
-        </div>
-        <div class="project-right">
-          <div class="case-section">
-            <div class="case-section-label">What I explored</div>
-            <ul class="case-list">
-              <li>End-to-end ML pipeline from raw operational data to real-time scheduling recommendations</li>
-              <li>D3.js visualization of live scheduling states for non-technical operators</li>
-              <li>Cloud-based deployment of an optimization system with real operational constraints</li>
-            </ul>
-          </div>
-          <div class="case-section">
-            <div class="case-section-label">Recognition</div>
-            <div class="challenge-block">
-              <p class="challenge-text">Selected as SIH Finalist — the project was validated not just technically but on real-world operational relevance. The hardest part was designing for operators, not engineers.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
 <!-- EXPERIENCE -->
-<section id="exp-section" style="background: var(--bg-surface); padding: 7rem 4rem;">
+<section id="exp-section">
   <div class="container">
     <div class="section-label">Work</div>
-    <h2 class="section-title">Experience</h2>
+    <h2 class="section-title breathe-title">Experience</h2>
 
     <div class="exp-item fade-up">
       <div class="exp-meta">
@@ -831,7 +1109,7 @@
       <div class="exp-meta">
         <div class="exp-date">Aug 2023 – Present</div>
         <div class="exp-company">SRM University – AP</div>
-        <div class="exp-stack">B.Tech CSE · CGPA 7.57</div>
+        <div class="exp-stack">B.Tech CSE · CGPA 7.7</div>
       </div>
       <div class="exp-content">
         <h3 class="exp-content-title">B.Tech, Computer Science &amp; Engineering</h3>
@@ -847,7 +1125,7 @@
 </section>
 
 <!-- ABOUT -->
-<section id="about-section" style="padding: 0;">
+<section id="about-section">
   <div id="about">
     <div class="about-left">
       <p class="about-quote">"I enjoy building systems that don't just work — they surface meaning."</p>
@@ -857,31 +1135,31 @@
     </div>
     <div class="about-sidebar">
       <div class="stat-row">
-        <div class="stat-box"><div class="stat-num">4+</div><div class="stat-label">Major projects</div></div>
+        <div class="stat-box"><div class="stat-num">7+</div><div class="stat-label">Major projects</div></div>
         <div class="stat-box"><div class="stat-num">10+</div><div class="stat-label">Technologies</div></div>
         <div class="stat-box"><div class="stat-num">2×</div><div class="stat-label">MUN Vice Chair</div></div>
         <div class="stat-box"><div class="stat-num">OCP</div><div class="stat-label">Oracle Certified</div></div>
       </div>
       <div class="sidebar-block" style="margin-top: 1.5rem;">
-        <div class="sidebar-block-label">Languages & Frameworks</div>
+        <div class="sidebar-block-label">Languages &amp; Frameworks</div>
         <div class="sidebar-items">
           <span class="sidebar-item">Python, JavaScript, Java, SQL, C++</span>
-          <span class="sidebar-item">FastAPI, React.js, Node.js, MongoDB</span>
-          <span class="sidebar-item">ChromaDB, Google OR-Tools, Power BI</span>
+          <span class="sidebar-item">FastAPI, Next.js, React.js, Node.js, PostgreSQL</span>
+          <span class="sidebar-item">ChromaDB, pgvector, Google OR-Tools, Power BI</span>
         </div>
       </div>
       <div class="sidebar-block">
-        <div class="sidebar-block-label">AI & Intelligent Systems</div>
+        <div class="sidebar-block-label">AI &amp; Intelligent Systems</div>
         <div class="sidebar-items">
-          <span class="sidebar-item">RAG Pipelines · Semantic Search</span>
-          <span class="sidebar-item">Prompt Engineering · NLP Workflows</span>
-          <span class="sidebar-item">Predictive Analytics · LLM Integration</span>
+          <span class="sidebar-item">RAG Pipelines · LangGraph Agents</span>
+          <span class="sidebar-item">Prompt Engineering · Eval Harnesses</span>
+          <span class="sidebar-item">SHAP Explainability · LLM Integration</span>
         </div>
       </div>
       <div class="sidebar-block">
         <div class="sidebar-block-label">Education</div>
         <div class="sidebar-items">
-          <span class="sidebar-item">B.Tech CSE — SRM University-AP</span>
+          <span class="sidebar-item">B.Tech CSE — SRM University-AP (CGPA 7.7)</span>
           <span class="sidebar-item">Oracle Certified Professional, Java SE 17</span>
         </div>
       </div>
@@ -891,22 +1169,23 @@
 
 <!-- CONTACT -->
 <section id="contact-section">
-  <h2 class="contact-title">Let's build something.</h2>
+  <h2 class="contact-title breathe-title">Let's build something.</h2>
   <p class="contact-sub">Currently interested in exploring intelligent systems, AI-assisted workflows, and product-focused engineering opportunities. Open to internships and collaborative projects.</p>
   <div class="contact-links">
     <a href="mailto:karunya.kalk@gmail.com" class="contact-link">Email</a>
     <a href="https://github.com/KarunyaKalk" target="_blank" class="contact-link">GitHub</a>
-    <a href="https://linkedin.com/in/karunyakalk" target="_blank" class="contact-link">LinkedIn</a>
-    <a href="tel:+917013170637" class="contact-link">+91 701 317 0637</a>
+    <a href="https://www.linkedin.com/in/karunyakalk/" target="_blank" class="contact-link">LinkedIn</a>
+    <a href="tel:+917013170637" class="contact-link">+91 7013170637</a>
   </div>
 </section>
 
 <footer>
   <span class="footer-name">Karunya Kalkhundiya</span>
-  <span class="footer-copy">© 2025 — Built with purpose</span>
+  <span class="footer-copy">© 2026 — Built with purpose</span>
 </footer>
 
 <script>
+  // Staggered scroll reveal
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -914,13 +1193,21 @@
         observer.unobserve(e.target);
       }
     });
-  }, { threshold: 0.08 });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-  document.querySelectorAll('.fade-up').forEach((el, i) => {
-    el.style.transitionDelay = (i % 4) * 0.08 + 's';
-    observer.observe(el);
+  // Apply stagger delay per parent container siblings
+  document.querySelectorAll('.exploring-grid, .project-list, #exp-section, .stat-row').forEach(container => {
+    const children = container.querySelectorAll('.exp-card, .project-item, .exp-item, .stat-box');
+    children.forEach((el, index) => {
+      el.style.transitionDelay = (index % 4) * 0.08 + 's';
+      observer.observe(el);
+    });
   });
 
+  // Observe standalone fade-up elements
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Project cards focus dimming on hover
   document.querySelectorAll('.project-item').forEach(item => {
     item.addEventListener('mouseenter', () => {
       document.querySelectorAll('.project-item').forEach(other => {
@@ -933,6 +1220,21 @@
       });
     });
   });
+
+  // Magnetic CTA buttons for desktop devices
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    document.querySelectorAll('.btn, .project-link, .contact-link').forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        btn.style.transform = `translate3d(${x * 0.18}px, ${y * 0.18}px, 0)`;
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = 'translate3d(0, 0, 0)';
+      });
+    });
+  }
 </script>
 </body>
 </html>
