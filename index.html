@@ -835,9 +835,105 @@
 
     <div class="project-list">
 
-      <!-- Project 01 — Navira -->
+      <!-- Project 01 — Peachy Agent -->
       <div class="project-item fade-up">
         <div class="project-num">01</div>
+        <div class="project-left">
+          <div class="project-category">AI / LLM Systems · Applied Agents</div>
+          <h3 class="project-name">Peachy — AI-Powered Interview Coach with Evaluated Feedback Loops</h3>
+          <p class="project-statement">Can an LLM agent give interview feedback that's consistently rigorous — not just plausible-sounding — across hundreds of different questions and JDs?</p>
+          <div class="project-tags">
+            <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Next.js</span>
+            <span class="tag">Claude API</span><span class="tag">pgvector</span><span class="tag">LangGraph</span>
+          </div>
+          <a href="https://github.com/KarunyaKalk/Peachy_Agent-Job-Search-" class="project-link" target="_blank">View on GitHub →</a>
+        </div>
+        <div class="project-right">
+          <div class="case-section">
+            <div class="case-section-label">What I explored</div>
+            <ul class="case-list">
+              <li>RAG over a curated question bank + the specific job description to generate role-relevant interview questions rather than generic ones</li>
+              <li>Structured function-calling to force consistent, scoreable feedback (not free-text opinions) on each answer</li>
+              <li>A hand-rolled agent state machine to manage the multi-turn interview flow (ask → answer → follow-up → score)</li>
+              <li>An eval harness — golden Q&amp;A pairs with expected feedback quality — to measure whether prompt changes actually improved output, rather than trusting vibes</li>
+            </ul>
+          </div>
+          <div class="case-section">
+            <div class="case-section-label">Measured outcomes</div>
+            <div class="challenge-block">
+              <p class="challenge-text">Built and ran a 40-case eval suite across three prompt iterations; the third version cut inconsistent scoring (same-quality answers rated differently) and reduced vague feedback (flagged by rubric, not by eye) — gains that came from tightening the scoring schema, not from a bigger model. [TODO: Quantify scoring consistency % and vague feedback reduction % after final eval run]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 02 — Coinsy Finance -->
+      <div class="project-item fade-up">
+        <div class="project-num">02</div>
+        <div class="project-left">
+          <div class="project-category">FinTech · LLM Systems</div>
+          <h3 class="project-name">Coinsy — AI-Powered Personal Finance Tracker</h3>
+          <p class="project-statement">Can an LLM turn raw bank statement data into personalized, trustworthy financial guidance — without feeling like a spreadsheet?</p>
+          <div class="project-tags">
+            <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">React.js</span>
+            <span class="tag">Claude API</span><span class="tag">Pandas</span><span class="tag">PostgreSQL</span>
+          </div>
+          <a href="https://github.com/KarunyaKalk/Coinsy-Finance" class="project-link" target="_blank">View on GitHub →</a>
+        </div>
+        <div class="project-right">
+          <div class="case-section">
+            <div class="case-section-label">What I explored</div>
+            <ul class="case-list">
+              <li>LLM-based transaction categorization with a user-correction feedback loop for improving accuracy over time</li>
+              <li>Trend-based spend forecasting combined with LLM-generated natural-language explanations</li>
+              <li>Semi-structured data extraction from bank/UPI PDF and CSV statements</li>
+              <li>State-driven UI design — an animated assistant reacting to live budget and spending data in real time</li>
+            </ul>
+          </div>
+          <div class="case-section">
+            <div class="case-section-label">Measured outcomes</div>
+            <div class="challenge-block">
+              <p class="challenge-text">One import-to-insight pipeline, from raw statement upload to categorized dashboard, cutting manual expense categorization down to zero user input for 90%+ of transactions after the first few corrections.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 03 — Riskline -->
+      <div class="project-item fade-up">
+        <div class="project-num">03</div>
+        <div class="project-left">
+          <div class="project-category">Risk Modeling · ML Systems</div>
+          <h3 class="project-name">Riskline — Credit Risk Prediction with Explainable ML</h3>
+          <p class="project-statement">Can a classical ML model predict loan default risk accurately enough to matter — and can you actually explain why it flagged someone?</p>
+          <div class="project-tags">
+            <span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">XGBoost</span>
+            <span class="tag">SHAP</span><span class="tag">FastAPI</span><span class="tag">Streamlit</span>
+          </div>
+          <a href="https://github.com/KarunyaKalk/Riskline" class="project-link" target="_blank">View on GitHub →</a>
+        </div>
+        <div class="project-right">
+          <div class="case-section">
+            <div class="case-section-label">What I explored</div>
+            <ul class="case-list">
+              <li>Feature engineering and class-imbalance handling (SMOTE) on real-world credit data</li>
+              <li>Model comparison: logistic regression baseline vs. gradient-boosted trees</li>
+              <li>SHAP-based explainability to surface which features drove each prediction</li>
+              <li>Precision/recall/ROC-AUC tradeoffs instead of accuracy, given severe class imbalance</li>
+            </ul>
+          </div>
+          <div class="case-section">
+            <div class="case-section-label">Measured outcomes</div>
+            <div class="challenge-block">
+              <p class="challenge-text">[TODO: Complete model evaluation and performance metrics after final benchmark]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 04 — Navira -->
+      <div class="project-item fade-up">
+        <div class="project-num">04</div>
         <div class="project-left">
           <div class="project-category">Adaptive Productivity · AI · Product Management</div>
           <h3 class="project-name">Navira — Adaptive Life Companion</h3>
@@ -882,102 +978,6 @@
             <div class="case-section-label">Current Outcome</div>
             <div class="challenge-block">
               <p class="challenge-text">Navira is being developed as an end-to-end product case study, beginning with problem validation and user research and progressing toward a functional web and mobile MVP.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 02 — Peachy Agent -->
-      <div class="project-item fade-up">
-        <div class="project-num">02</div>
-        <div class="project-left">
-          <div class="project-category">AI / LLM Systems · Applied Agents</div>
-          <h3 class="project-name">Peachy — AI-Powered Interview Coach with Evaluated Feedback Loops</h3>
-          <p class="project-statement">Can an LLM agent give interview feedback that's consistently rigorous — not just plausible-sounding — across hundreds of different questions and JDs?</p>
-          <div class="project-tags">
-            <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Next.js</span>
-            <span class="tag">Claude API</span><span class="tag">pgvector</span><span class="tag">LangGraph</span>
-          </div>
-          <a href="https://github.com/KarunyaKalk/Peachy_Agent-Job-Search-" class="project-link" target="_blank">View on GitHub →</a>
-        </div>
-        <div class="project-right">
-          <div class="case-section">
-            <div class="case-section-label">What I explored</div>
-            <ul class="case-list">
-              <li>RAG over a curated question bank + the specific job description to generate role-relevant interview questions rather than generic ones</li>
-              <li>Structured function-calling to force consistent, scoreable feedback (not free-text opinions) on each answer</li>
-              <li>A hand-rolled agent state machine to manage the multi-turn interview flow (ask → answer → follow-up → score)</li>
-              <li>An eval harness — golden Q&amp;A pairs with expected feedback quality — to measure whether prompt changes actually improved output, rather than trusting vibes</li>
-            </ul>
-          </div>
-          <div class="case-section">
-            <div class="case-section-label">Measured outcomes</div>
-            <div class="challenge-block">
-              <p class="challenge-text">Built and ran a 40-case eval suite across three prompt iterations; the third version cut inconsistent scoring (same-quality answers rated differently) and reduced vague feedback (flagged by rubric, not by eye) — gains that came from tightening the scoring schema, not from a bigger model. [TODO: Quantify scoring consistency % and vague feedback reduction % after final eval run]</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 03 — Coinsy Finance -->
-      <div class="project-item fade-up">
-        <div class="project-num">03</div>
-        <div class="project-left">
-          <div class="project-category">FinTech · LLM Systems</div>
-          <h3 class="project-name">Coinsy — AI-Powered Personal Finance Tracker</h3>
-          <p class="project-statement">Can an LLM turn raw bank statement data into personalized, trustworthy financial guidance — without feeling like a spreadsheet?</p>
-          <div class="project-tags">
-            <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">React.js</span>
-            <span class="tag">Claude API</span><span class="tag">Pandas</span><span class="tag">PostgreSQL</span>
-          </div>
-          <a href="https://github.com/KarunyaKalk/Coinsy-Finance" class="project-link" target="_blank">View on GitHub →</a>
-        </div>
-        <div class="project-right">
-          <div class="case-section">
-            <div class="case-section-label">What I explored</div>
-            <ul class="case-list">
-              <li>LLM-based transaction categorization with a user-correction feedback loop for improving accuracy over time</li>
-              <li>Trend-based spend forecasting combined with LLM-generated natural-language explanations</li>
-              <li>Semi-structured data extraction from bank/UPI PDF and CSV statements</li>
-              <li>State-driven UI design — an animated assistant reacting to live budget and spending data in real time</li>
-            </ul>
-          </div>
-          <div class="case-section">
-            <div class="case-section-label">Measured outcomes</div>
-            <div class="challenge-block">
-              <p class="challenge-text">One import-to-insight pipeline, from raw statement upload to categorized dashboard, cutting manual expense categorization down to zero user input for 90%+ of transactions after the first few corrections.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 04 — Riskline -->
-      <div class="project-item fade-up">
-        <div class="project-num">04</div>
-        <div class="project-left">
-          <div class="project-category">Risk Modeling · ML Systems</div>
-          <h3 class="project-name">Riskline — Credit Risk Prediction with Explainable ML</h3>
-          <p class="project-statement">Can a classical ML model predict loan default risk accurately enough to matter — and can you actually explain why it flagged someone?</p>
-          <div class="project-tags">
-            <span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">XGBoost</span>
-            <span class="tag">SHAP</span><span class="tag">FastAPI</span><span class="tag">Streamlit</span>
-          </div>
-          <a href="https://github.com/KarunyaKalk/Riskline" class="project-link" target="_blank">View on GitHub →</a>
-        </div>
-        <div class="project-right">
-          <div class="case-section">
-            <div class="case-section-label">What I explored</div>
-            <ul class="case-list">
-              <li>Feature engineering and class-imbalance handling (SMOTE) on real-world credit data</li>
-              <li>Model comparison: logistic regression baseline vs. gradient-boosted trees</li>
-              <li>SHAP-based explainability to surface which features drove each prediction</li>
-              <li>Precision/recall/ROC-AUC tradeoffs instead of accuracy, given severe class imbalance</li>
-            </ul>
-          </div>
-          <div class="case-section">
-            <div class="case-section-label">Measured outcomes</div>
-            <div class="challenge-block">
-              <p class="challenge-text">[TODO: Complete model evaluation and performance metrics after final benchmark]</p>
             </div>
           </div>
         </div>
